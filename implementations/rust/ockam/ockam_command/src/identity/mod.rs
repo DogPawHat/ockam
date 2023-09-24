@@ -30,7 +30,6 @@ pub struct IdentityCommand {
     #[command(subcommand)]
     subcommand: IdentitySubcommand,
 }
-
 #[derive(Clone, Debug, Subcommand)]
 pub enum IdentitySubcommand {
     Create(CreateCommand),
@@ -109,7 +108,7 @@ pub fn create_default_identity(opts: &CommandGlobalOpts) {
 mod tests {
     use super::*;
     use crate::GlobalArgs;
-    use ockam_api::cli_state::StateItemTrait;
+    use ockam_api::cli_state::traits::StateItemFileTrait;
 
     #[test]
     fn test_initialize() {
